@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import UpdateProfile from './components/UpdateProfile';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import CallForwarding from './components/CallForwarding-testing';
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
@@ -29,6 +30,8 @@ function App() {
               <UpdateProfile />
             </ProtectedRoute>
           } />
+
+          <Route path="/call-forwarding" element={ <CallForwarding />} />
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
         </Routes>
       </BrowserRouter>
