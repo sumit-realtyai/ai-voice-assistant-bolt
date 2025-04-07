@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Phone, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
+
 
 function Login() {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ function Login() {
         <h1 className="text-2xl font-bold text-center text-gray-900 mb-8">
           {step === 'phone' ? 'Login with Phone' : 'Enter OTP'}
         </h1>
-        
+        <button className='bg-red-600  rounded-5 px-4 py-2 '> <Link to={"/call-forwarding"} >call forwarding</Link>  </button>
         {step === 'phone' ? (
           <form onSubmit={handlePhoneSubmit} className="space-y-6">
             <div>
